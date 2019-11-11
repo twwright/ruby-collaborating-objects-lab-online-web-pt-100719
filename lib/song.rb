@@ -20,18 +20,6 @@ class Song
 	end
 	
 	
-	
-	def self.new_by_filename(filename)
-        artist = Artist.all.select{|artist| artist.name == file_array[0]}
-        if artist == nil 
-            artist = Artist.new(file_array[0])
-        else
-            artist = artist.pop
-        end 
-        song.artist = artist_obj
-        song
-    end
-	
 	def artist_name=(artist)
 		artist.find_or_create_by_name(artist)
 		artist.add_song(self)
