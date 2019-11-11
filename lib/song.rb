@@ -32,4 +32,12 @@ class Song
 		self.artist = looking_for
 	end
 	
+	
+	def artist_name=(artist_name)
+        artist_obj = Artist.all.find{|artist| artist.name == artist_name}
+        if artist_obj == ni l
+            artist_obj = Artist.new(artist_name)           
+        end
+        self.artist = artist_obj
+    end
 end
