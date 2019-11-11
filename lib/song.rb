@@ -26,8 +26,14 @@ class Song
 	
 	
 	def artist_name=(artist)
-		self.find_or_create_by_name(artist)
-		artist.add_song(self)
+		looking_for = Artist.all.detect { |artist| artist.name == name }
+    if looking_for == nil 
+      self.new(name)
+    else
+      looking_for
+    end
+		self.artist = looking_for
 	end
+	
 	
 end
