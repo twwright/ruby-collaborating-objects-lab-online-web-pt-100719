@@ -19,11 +19,11 @@ class Song
 	end
 	
 	def self.new_by_filename(filename)
-        artist_obj = Artist.all.select{|artist| artist.name == file_array[0]}
-        if artist_obj == [] 
-            artist_obj = Artist.new(file_array[0])
+        artist = Artist.all.select{|artist| artist.name == file_array[0]}
+        if artist == nil 
+            artist = Artist.new(file_array[0])
         else
-            artist_obj = artist_obj.pop
+            artist = artist.pop
         end 
         song.artist = artist_obj
         song
