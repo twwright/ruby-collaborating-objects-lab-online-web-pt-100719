@@ -14,7 +14,12 @@ class Song
 	def self.new_by_filename(filename)
 		files = filename.split(" - ")
 		song = self.new(files[1])
-		artist = .find_or_create_by_name(files[0])
+		looking_for = self.all.detect { |artist| artist.name == name }
+    if looking_for == nil 
+      self.new(name)
+    else
+      looking_for
+    end
 		song.artist_name = files[0]
 		song
 	end
