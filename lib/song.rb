@@ -27,7 +27,7 @@ class Song
 	def artist_name=(artist)
 		looking_for = Artist.all.detect { |artist| artist.name == name }
     if looking_for == nil 
-      self.new(name)
+      looking_for = self.new(name)
     else
       looking_for
     end
