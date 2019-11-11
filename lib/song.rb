@@ -18,6 +18,8 @@ class Song
 		song
 	end
 	
+	
+	
 	def self.new_by_filename(filename)
         artist = Artist.all.select{|artist| artist.name == file_array[0]}
         if artist == nil 
