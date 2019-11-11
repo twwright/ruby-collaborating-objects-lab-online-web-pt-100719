@@ -23,7 +23,7 @@ class Song
 		song.artist_name = files[0]
 		song
 	end
-	
+=begin
 	def artist_name=(artist)
 		looking_for = Artist.all.detect { |artist| artist.name == name }
     if looking_for == nil 
@@ -31,7 +31,7 @@ class Song
     end
 		self.artist = looking_for
 	end
-	
+=end
 	def artist_name=(artist_name)
         artist_obj = Artist.all.find{|artist| artist.name == artist_name}
         if artist_obj == nil
